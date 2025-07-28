@@ -1,0 +1,28 @@
+[project]
+name = "job_posting_creator"
+version = "0.1.0"
+description = "AI-powered job posting creation and optimization system"
+readme = "README.md"
+authors = [{ name = "laila", email = "lailahassanelhadidy@gmail.com" }]
+requires-python = ">=3.10"
+
+dependencies = [
+    "crewai[tools]>=0.140.0",
+    "python-dotenv",
+    "pydantic",
+    "requests",
+    "beautifulsoup4",
+    "pandas",
+]
+
+[project.scripts]
+run_crew = "job_posting_creator.main:run"
+
+[tool.crewai]
+type = "crew"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"

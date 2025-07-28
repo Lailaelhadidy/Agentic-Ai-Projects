@@ -1,0 +1,29 @@
+research_task:
+  description: >
+    Conduct a thorough research about the job {job_title} with the industry {industry}
+    Make sure you find any interesting and relevant information
+    belongs to the job with details.
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about the job {job_title}
+  agent: job_researcher
+
+writing_task:
+  description: >
+    Review the context you got and write a job post description of the job {job_title} with respect of the industry 
+    {industry} and location {location}.
+    Make sure the post is detailed and contains any and all relevant information.
+    focus on key areas like the job title, company/department overview, duties and responsibilities, 
+    required/preferred qualifications, and working conditions.
+  expected_output: >
+    A fully job offer post description with the content details, each part with a full section of information.
+    Formatted as markdown without '```'
+  agent: job_writer
+
+reviewing_Task:
+  description: >
+    review the {job_title} job description post you got and refine it professionally to be 
+    ready and qualified to be shared in the job offers platforms. generate the final job post 
+    with the ideal length for a job posting typically falls between 300 and 700 words
+  expected_output: >
+    A final refined job post, reviewed professionally and ready to be launched.
+  agent: Hr_reviewer
