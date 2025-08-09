@@ -1,4 +1,4 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool
@@ -17,6 +17,9 @@ class JobPostingCreator():
         return Agent(
             config=self.agents_config['job_researcher'],  # type: ignore[index]
             verbose=True,
+            llm=LLM(
+                model="gemini/gemini-2.0-flash",  # Use Gemini model
+                temperature=0.7),
             tools=[SerperDevTool(), ScrapeWebsiteTool()]
         )
 
@@ -25,6 +28,10 @@ class JobPostingCreator():
         return Agent(
             config=self.agents_config['job_writer'],  # type: ignore[index]
             verbose=True
+            llm=LLM(
+                model="gemini/gemini-2.0-flash",  # Use Gemini model
+                temperature=0.7
+            )
         )
 
     @agent
@@ -32,6 +39,10 @@ class JobPostingCreator():
         return Agent(
             config=self.agents_config['Hr_reviewer'],  # type: ignore[index]
             verbose=True
+            llm=LLM(
+                model="gemini/gemini-2.0-flash",  # Use Gemini model
+                temperature=0.7
+            )
         )
 
     # To learn more about structured task outputs,
@@ -67,3 +78,4 @@ class JobPostingCreator():
             verbose=True,
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
+
