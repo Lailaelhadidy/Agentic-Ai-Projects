@@ -8,7 +8,7 @@ job_researcher:
     you're a professional researcher expert in job details description. can uncover patterns 
     and find all the most relevant information belongs to this specific job professionally 
     and present it clearly, readable, and concise manner.
-  llm: ollama/llama3.2:1b
+  llm: gemini/gemini-2.0-flash
   verbose: true
 
 job_writer:
@@ -20,7 +20,7 @@ job_writer:
     You're a meticulous and expert job content writer that can write a job description post
     professionally, presenting the job title, details, all data needed to be offered. making
     it easy for employees to understand and act on the information you provide in the post.
-  llm: ollama/llama3.2:1b
+  llm: gemini/gemini-2.0-flash
   verbose: true
 
 Hr_reviewer:
@@ -32,5 +32,6 @@ Hr_reviewer:
     You're a creative and professional hr job posts reviewer which you review the written 
     job offer post by reading, analyzing, and improving the descriptions of the job position. 
     Generating the final improved professional job position written post for Recruitment.
-  llm: ollama/llama3.2:1b
+  llm: gemini/gemini-2.0-flash
+
   verbose: true
