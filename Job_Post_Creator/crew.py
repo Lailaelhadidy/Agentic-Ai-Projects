@@ -27,7 +27,7 @@ class JobPostingCreator():
     def job_writer(self) -> Agent:
         return Agent(
             config=self.agents_config['job_writer'],  # type: ignore[index]
-            verbose=True
+            verbose=True,
             llm=LLM(
                 model="gemini/gemini-2.0-flash",  # Use Gemini model
                 temperature=0.7
@@ -38,7 +38,7 @@ class JobPostingCreator():
     def Hr_reviewer(self) -> Agent:
         return Agent(
             config=self.agents_config['Hr_reviewer'],  # type: ignore[index]
-            verbose=True
+            verbose=True,
             llm=LLM(
                 model="gemini/gemini-2.0-flash",  # Use Gemini model
                 temperature=0.7
@@ -78,4 +78,3 @@ class JobPostingCreator():
             verbose=True,
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
-
